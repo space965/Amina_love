@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AMINA — My Favorite Person ❤️</title>
+<style>
+:root{--pink:#ff5c9a;--soft:#ffd2e2;--bg:#08050a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% 0,#3b1026,#10070e 45%,#050308 100%);color:#fff;font-family:Georgia,serif;overflow-x:hidden}
+.hidden{display:none!important}
+#lock{min-height:100vh;display:grid;place-items:center;padding:24px;position:relative;overflow:hidden}
+.blob{position:absolute;width:330px;height:330px;border-radius:50%;background:var(--pink);filter:blur(110px);opacity:.17;animation:drift 8s ease-in-out infinite}
+.b1{left:-130px;top:-90px}.b2{right:-150px;bottom:-100px;animation-delay:2s}
+.lockcard{width:min(450px,100%);padding:44px 28px;text-align:center;border:1px solid #ffffff24;border-radius:30px;background:#ffffff0d;backdrop-filter:blur(18px);box-shadow:0 25px 90px #0009;z-index:2}
+.bigheart{font-size:58px;animation:pulse 1.6s infinite}
+.eyebrow{font:12px Arial,sans-serif;letter-spacing:5px;text-transform:uppercase;color:#ffacc9}
+h1{font-size:42px;margin:10px 0}
+.muted{opacity:.7;line-height:1.7}
+input{width:100%;padding:16px;border:1px solid #ffffff2b;border-radius:14px;background:#0005;color:white;text-align:center;font-size:16px;outline:none;margin-top:18px}
+button{border:0;border-radius:14px;padding:15px 22px;background:linear-gradient(135deg,#ff4e91,#ff8bb8);color:white;font-weight:bold;font-size:16px;cursor:pointer;box-shadow:0 10px 35px #ff4e9140}
+.lockcard button{margin-top:14px;width:100%}
+#error{height:20px;color:#ff9fbd;margin-top:12px;font:13px Arial,sans-serif}
+
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:70px 22px;position:relative}
+.hero-content{max-width:850px;z-index:2}
+.hero h2{font-size:clamp(58px,13vw,120px);line-height:.9;margin:18px 0 8px;text-shadow:0 8px 50px #ff4e9140}
+.hero p{font-size:20px;line-height:1.8;opacity:.82;max-width:680px;margin:25px auto}
+.cta{display:inline-block;text-decoration:none;color:white;padding:14px 22px;border:1px solid #ffffff25;border-radius:99px;background:#ffffff0d}
+section{max-width:1050px;margin:auto;padding:90px 22px}
+.title{text-align:center;font-size:40px;margin:0 0 12px}
+.sub{text-align:center;max-width:680px;margin:0 auto 40px;line-height:1.8;opacity:.7}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.photo{border-radius:25px;overflow:hidden;border:1px solid #ffffff18;background:#120811;box-shadow:0 20px 60px #0007;transition:.4s}
+.photo:hover{transform:translateY(-9px) rotate(.4deg)}
+.photo img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
+.caption{text-align:center;padding:17px;color:#ffd0df}
+.letter{max-width:760px;margin:auto;padding:40px;border-radius:28px;background:#ffffff0a;border:1px solid #ffffff18;box-shadow:0 20px 70px #0006;line-height:2;font-size:19px}
+.signature{text-align:right;color:#ffabc8;margin-top:30px}
+.counter{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:35px 0}
+.box{min-width:110px;padding:18px 12px;border-radius:18px;background:#ffffff0b;border:1px solid #ffffff14;text-align:center}
+.num{font-size:30px;color:#ffacc9;display:block}.lab{font:11px Arial,sans-serif;opacity:.6;text-transform:uppercase;letter-spacing:2px}
+.question{text-align:center;padding-bottom:110px}
+.question h3{font-size:clamp(38px,8vw,70px);margin:10px 0}
+.yes{margin:8px}.later{background:#ffffff12;border:1px solid #ffffff20;margin:8px}
+footer{text-align:center;padding:30px;color:#a9929e}
+.music{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:18px;background:#160914dd;border:1px solid #ffffff18;backdrop-filter:blur(12px)}
+.music button{margin:0;padding:10px 13px}
+.music small{opacity:.7}
+.heart{position:fixed;bottom:-30px;pointer-events:none;z-index:15;animation:rise linear forwards}
+@keyframes pulse{50%{transform:scale(1.12)}}
+@keyframes drift{50%{transform:translate(50px,35px) scale(1.08)}}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+@media(max-width:520px){.letter{padding:26px;font-size:17px}.box{min-width:95px}}
+</style>
+</head>
+<body>
+
+<div id="lock">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="lockcard">
+    <div class="bigheart">❤️</div>
+    <div class="eyebrow">A secret made for</div>
+    <h1>AMINA</h1>
+    <p class="muted">There is only one password… and one person I made this for.</p>
+    <input id="pw" type="password" placeholder="Enter the password">
+    <button onclick="unlock()">Open My Heart 💌</button>
+    <div id="error"></div>
+  </div>
+</div>
+
+<main id="site" class="hidden">
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">To the girl who makes ordinary days special</div>
+      <h2>AMINA ❤️</h2>
+      <p>Some feelings are too big for a text message… so I made you a whole little place on the internet.</p>
+      <a class="cta" href="#photos">See your pictures ↓</a>
+    </div>
+  </header>
+
+  <section id="photos">
+    <h2 class="title">You ✨</h2>
+    <p class="sub">A couple of pictures, a lot of feelings, and hopefully a smile when you see this.</p>
+    <div class="gallery">
+      <article class="photo"><img src="amina-1.jpg" alt="AMINA"><div class="caption">Beautiful without even trying. ❤️</div></article>
+      <article class="photo"><img src="amina-2.jpg" alt="AMINA"><div class="caption">One of my favorite views. ✨</div></article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">Our little timer ⏳</h2>
+    <p class="sub">Since November 30, 2023 — and every second since then counts. ❤️</p>
+    <div class="counter">
+      <div class="box"><span class="num" id="days">0</span><span class="lab">Days</span></div>
+      <div class="box"><span class="num" id="hours">0</span><span class="lab">Hours</span></div>
+      <div class="box"><span class="num" id="mins">0</span><span class="lab">Minutes</span></div>
+      <div class="box"><span class="num" id="secs">0</span><span class="lab">Seconds</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">A letter for you 💌</h2>
+    <div class="letter">
+      <p>AMINA,</p>
+      <p>I don't think a website can completely explain what you mean to me, but I wanted to make something that feels a little more special than an ordinary message.</p>
+      <p>You have this way of making a normal moment feel memorable. Your smile, your expressions, and simply having you around can change the whole mood of my day.</p>
+      <p>So whenever you wonder how special you are to me, come back here and remember that someone took the time to build this little corner of the internet just for you.</p>
+      <p>And yes… I really, really like you. ❤️</p>
+      <p class="signature">Always with love,<br>Someone who chose you. ❤️</p>
+    </div>
+  </section>
+
+  <section class="question">
+    <div class="eyebrow">One last thing…</div>
+    <h3>Will you keep choosing me? ❤️</h3>
+    <p class="sub">No pressure. Just a tiny question from a very big heart.</p>
+    <button class="yes" onclick="answer('You just made my whole day. ❤️')">YES ❤️</button>
+    <button class="later" onclick="answer('I’ll wait… but I’m still smiling. 🥹')">Let me think ✨</button>
+    <p id="answer" class="sub"></p>
+  </section>
+
+  <footer>Made especially for AMINA • MARRIED BY LOVE 2034 ❤️</footer>
+
+  <div class="music">
+    <button onclick="toggleMusic()" id="musicBtn">▶ Play</button>
+    <small>Our song 🎵</small>
+    <audio id="song" loop><source src="amr-diab-song.mp3" type="audio/mpeg"></audio>
+  </div>
+</main>
+
+<script>
+const PASSWORD="MARRIED BY LOVE 2034";
+
+// Change this date to the day you first met / started talking.
+// Example: "2026-01-15T20:00:00"
+const START_DATE="2023-11-30T00:00:00";
+
+function unlock(){
+  const v=document.getElementById("pw").value.trim();
+  if(v===PASSWORD){
+    document.getElementById("lock").classList.add("hidden");
+    document.getElementById("site").classList.remove("hidden");
+    burst();
+  }else document.getElementById("error").textContent="Wrong password… try again ❤️";
+}
+document.getElementById("pw").addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
+
+function updateCounter(){
+  const start=new Date(START_DATE), now=new Date();
+  let ms=Math.max(0,now-start), sec=Math.floor(ms/1000);
+  const d=Math.floor(sec/86400); sec%=86400;
+  const h=Math.floor(sec/3600); sec%=3600;
+  const m=Math.floor(sec/60); sec%=60;
+  document.getElementById("days").textContent=d;
+  document.getElementById("hours").textContent=h;
+  document.getElementById("mins").textContent=m;
+  document.getElementById("secs").textContent=sec;
+}
+setInterval(updateCounter,1000); updateCounter();
+
+function toggleMusic(){
+  const a=document.getElementById("song"),b=document.getElementById("musicBtn");
+  if(a.paused)a.play().then(()=>b.textContent="❚❚ Pause").catch(()=>b.textContent="▶ Add song");
+  else{a.pause();b.textContent="▶ Play"}
+}
+function burst(){for(let i=0;i<22;i++)setTimeout(makeHeart,i*120)}
+function makeHeart(){
+  const x=document.createElement("div");x.className="heart";
+  x.textContent=["❤️","💕","💗","✨","💖"][Math.floor(Math.random()*5)];
+  x.style.left=Math.random()*100+"vw";
+  x.style.fontSize=(14+Math.random()*20)+"px";
+  x.style.animationDuration=(4+Math.random()*5)+"s";
+  document.body.appendChild(x);setTimeout(()=>x.remove(),10000);
+}
+function answer(t){
+  document.getElementById("answer").textContent=t;
+  burst();
+}
+</script>
+</body>
+</html>
